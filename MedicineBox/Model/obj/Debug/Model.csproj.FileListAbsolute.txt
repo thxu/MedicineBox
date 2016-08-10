@@ -1,0 +1,10 @@
+E:\MyCode\C#\医药盒\code\MedicineBox\Model\bin\Debug\Model.dll
+E:\MyCode\C#\医药盒\code\MedicineBox\Model\bin\Debug\Model.pdb
+E:\MyCode\C#\医药盒\code\MedicineBox\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+E:\MyCode\C#\医药盒\code\MedicineBox\Model\obj\Debug\Model.dll
+E:\MyCode\C#\医药盒\code\MedicineBox\Model\obj\Debug\Model.pdb
+D:\git\MedicineBox\Model\bin\Debug\Model.dll
+D:\git\MedicineBox\Model\bin\Debug\Model.pdb
+D:\git\MedicineBox\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+D:\git\MedicineBox\Model\obj\Debug\Model.dll
+D:\git\MedicineBox\Model\obj\Debug\Model.pdb

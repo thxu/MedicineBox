@@ -1,0 +1,770 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Qunau.NetFrameWork.DbCommon</name>
+    </assembly>
+    <members>
+        <member name="T:Qunau.NetFrameWork.DbCommon.BaseRepository">
+            <summary>
+            底层基础处理仓储
+            </summary>
+        </member>
+        <member name="F:Qunau.NetFrameWork.DbCommon.BaseRepository.connection">
+            <summary>
+            IDbConnection
+            </summary>
+        </member>
+        <member name="F:Qunau.NetFrameWork.DbCommon.BaseRepository.cmd">
+            <summary>
+            IDbCommand
+            </summary>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.#ctor(Qunau.NetFrameWork.Infrastructure.IUnitOfWork,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qunau.NetFrameWork.DbCommon.BaseRepository"/> class.
+            构造函数
+            </summary>
+            <param name="unit">工作单元</param>
+            <param name="name">链接名称</param>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.AddParameter(System.String)">
+            <summary>
+            The add parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.AddParameter(System.String,System.Object)">
+            <summary>
+            The add parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.AddParameter(System.String,System.Object,System.Data.DbType)">
+            <summary>
+            The add parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.AddParameter(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection)">
+            <summary>
+            The add parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="direction">
+            The direction.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.AddParameter(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection,System.Int32)">
+            <summary>
+            The add parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="direction">
+            The direction.
+            </param>
+            <param name="size">
+            The size.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.AddParameter(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection,System.Int32,System.Byte)">
+            <summary>
+            The add parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="direction">
+            The direction.
+            </param>
+            <param name="size">
+            The size.
+            </param>
+            <param name="scale">
+            The scale.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ClearParameters">
+            <summary>
+            清除参数
+            </summary>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteReader(System.String,System.Data.CommandType,System.Data.CommandBehavior,System.Int32)">
+            <summary>
+            The execute reader.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="behavior">
+            The behavior.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDataReader"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteReader(System.String,System.Data.CommandType,System.Data.CommandBehavior)">
+            <summary>
+            The execute reader.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="behavior">
+            The behavior.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDataReader"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteReader(System.String,System.Data.CommandType,System.Int32)">
+            <summary>
+            The execute reader.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDataReader"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteReader(System.String,System.Data.CommandType)">
+            <summary>
+            The execute reader.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDataReader"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteReader(System.String,System.Data.CommandBehavior,System.Int32)">
+            <summary>
+            The execute reader.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="behavior">
+            The behavior.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDataReader"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteReader(System.String,System.Data.CommandBehavior)">
+            <summary>
+            The execute reader.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="behavior">
+            The behavior.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDataReader"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteReader(System.String,System.Int32)">
+            <summary>
+            The execute reader.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDataReader"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteReader(System.String)">
+            <summary>
+            The execute reader.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDataReader"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteTable(System.String,System.Data.CommandType,System.Data.CommandBehavior,System.Int32)">
+            <summary>
+            The execute table.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="behavior">
+            The behavior.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataTable"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteTable(System.String,System.Data.CommandType,System.Data.CommandBehavior)">
+            <summary>
+            The execute table.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="behavior">
+            The behavior.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataTable"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteTable(System.String,System.Data.CommandType,System.Int32)">
+            <summary>
+            The execute table.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataTable"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteTable(System.String,System.Data.CommandType)">
+            <summary>
+            The execute table.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataTable"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteTable(System.String,System.Data.CommandBehavior,System.Int32)">
+            <summary>
+            The execute table.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="behavior">
+            The behavior.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataTable"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteTable(System.String,System.Data.CommandBehavior)">
+            <summary>
+            The execute table.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="behavior">
+            The behavior.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataTable"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteTable(System.String,System.Int32)">
+            <summary>
+            The execute table.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataTable"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteTable(System.String)">
+            <summary>
+            The execute table.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataTable"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteDataSet(System.String,System.String[])">
+            <summary>
+            The execute data set.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="tableName">
+            The table name.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataSet"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteDataSet(System.String,System.Data.CommandType,System.String[])">
+            <summary>
+            The execute data set.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="tableName">
+            The table name.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.DataSet"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteScalar(System.String,System.Data.CommandType,System.Int32)">
+            <summary>
+            ExecuteScalar
+            </summary>
+            <param name="sql">sql</param>
+            <param name="type">type</param>
+            <param name="timeout">timeout</param>
+            <returns>result</returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteScalar(System.String)">
+            <summary>
+            ExecuteScalar
+            </summary>
+            <param name="sql">sql</param>
+            <returns>result</returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteNonQuery(System.String,System.Data.CommandType,System.Int32)">
+            <summary>
+            The execute non query.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteNonQuery(System.String,System.Data.CommandType)">
+            <summary>
+            The execute non query.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteNonQuery(System.String,System.Int32)">
+            <summary>
+            The execute non query.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <param name="timeout">
+            The timeout.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.ExecuteNonQuery(System.String)">
+            <summary>
+            The execute non query.
+            </summary>
+            <param name="sql">
+            The sql.
+            </param>
+            <returns>
+            The <see cref="T:System.Int32"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.CreateParameter(System.String)">
+            <summary>
+            The create parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.CreateParameter(System.String,System.Object)">
+            <summary>
+            The create parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.CreateParameter(System.String,System.Object,System.Data.DbType)">
+            <summary>
+            The create parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.CreateParameter(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection)">
+            <summary>
+            The create parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="direction">
+            The direction.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.CreateParameter(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection,System.Int32)">
+            <summary>
+            The create parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="direction">
+            The direction.
+            </param>
+            <param name="size">
+            The size.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.CreateParameter(System.String,System.Object,System.Data.DbType,System.Data.ParameterDirection,System.Int32,System.Byte)">
+            <summary>
+            The create parameter.
+            </summary>
+            <param name="name">
+            The name.
+            </param>
+            <param name="value">
+            The value.
+            </param>
+            <param name="type">
+            The type.
+            </param>
+            <param name="direction">
+            The direction.
+            </param>
+            <param name="size">
+            The size.
+            </param>
+            <param name="scale">
+            The scale.
+            </param>
+            <returns>
+            The <see cref="T:System.Data.IDbDataParameter"/>.
+            </returns>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.BaseRepository.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+        <member name="T:Qunau.NetFrameWork.DbCommon.ConnectionString">
+            <summary>
+            链接名称
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.TicketRead">
+            <summary>
+            机票读链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.TicketWrite">
+            <summary>
+            机票写链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.HotelRead">
+            <summary>
+            酒店读链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.HotelWrite">
+            <summary>
+            酒店写链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.TravelRead">
+            <summary>
+            旅游读链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.TravelWrite">
+            <summary>
+            旅游写链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.CommonRead">
+            <summary>
+            公共读链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.CommonWrite">
+            <summary>
+            公共写链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.SMSRead">
+            <summary>
+            短信(读)
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.SMSWrite">
+            <summary>
+            短信(写)
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.StickPoolRead">
+            <summary>
+            贴点资金池(读)
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.StickPoolWrite">
+            <summary>
+            贴点资金池(写)
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.PermitRead">
+            <summary>
+            景点门票读链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.PermitWrite">
+            <summary>
+            景点门票写链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.WalletRead">
+            <summary>
+            钱包读链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.WalletWrite">
+            <summary>
+            钱包写链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.PrepareDepositRead">
+            <summary>
+            预存款读链接
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.ConnectionString.PrepareDepositWrite">
+            <summary>
+            预存款写链接
+            </summary>
+        </member>
+        <member name="T:Qunau.NetFrameWork.DbCommon.DbFactory">
+            <summary>
+            数据库链接工厂
+            </summary>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.DbFactory.GetConnection(System.String)">
+            <summary>
+            创建数据库链接
+            </summary>
+            <param name="name">链接名称</param>
+            <returns>数据库链接</returns>
+        </member>
+        <member name="T:Qunau.NetFrameWork.DbCommon.UnitOfWork">
+            <summary>
+            工作单元
+            </summary>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.UnitOfWork.#ctor(System.Nullable{System.Data.IsolationLevel},System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qunau.NetFrameWork.DbCommon.UnitOfWork"/> class.
+            设置事务隔离级别
+            </summary>
+            <param name="isolationLevel">事务级别</param>
+            <param name="name">链接名称</param>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.UnitOfWork.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qunau.NetFrameWork.DbCommon.UnitOfWork"/> class.
+            </summary>
+            <param name="name">链接名称</param>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.UnitOfWork.Conn">
+            <summary>
+            IDbConnection
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.UnitOfWork.Command">
+            <summary>
+            IDbCommand
+            </summary>
+        </member>
+        <member name="P:Qunau.NetFrameWork.DbCommon.UnitOfWork.Transaction">
+            <summary>
+            IDbTransaction
+            </summary>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.UnitOfWork.Complete">
+            <summary>
+            提交事物
+            </summary>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.UnitOfWork.Rollback">
+            <summary>
+            回滚事物
+            </summary>
+        </member>
+        <member name="M:Qunau.NetFrameWork.DbCommon.UnitOfWork.Dispose">
+            <summary>
+            释放资源
+            </summary>
+        </member>
+    </members>
+</doc>

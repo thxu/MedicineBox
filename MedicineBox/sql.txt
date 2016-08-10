@@ -1,0 +1,84 @@
+drop table if exists Patient;
+
+/*==============================================================*/
+/* Table: Patient                                               */
+/*==============================================================*/
+create table Patient
+(
+   Id                   int not null auto_increment comment '病人ID',
+   Name                 varchar(50) not null comment '姓名',
+   Sex                  int not null comment '性别',
+   Age                  int not null comment '年龄',
+   Nation               varchar(50) not null comment '民族',
+   Height               decimal(19,2) not null comment '身高',
+   Weight               decimal(19,2) not null comment '体重',
+   Illness              varchar(50) not null comment '病情及禁忌',
+   MorningHour          int not null comment '早上服药时间',
+   MorningMinute        int not null comment '早上服药时间',
+   NoonHour             int not null comment '中午服药时间',
+   NoonMinute           int not null comment '中午服药时间',
+   EveningHour          int not null comment '晚上服药时间',
+   EveningMinute        int not null comment '晚上服药时间',
+   AdditionalHour       int not null comment '附加服药时间',
+   AdditionalMinute     int not null comment '附加服药时间',
+   MorningStatus        int not null comment '早上服药结果',
+   NoonStatus           int not null comment '中午服药结果',
+   EveningStatus        int not null comment '晚上服药结果',
+   AdditionalStatus     int not null comment '附加服药结果',
+   DeviceId             int not null comment '设备ID',
+   WardNo               varchar(50) not null comment '病房号',
+   BedNo                varchar(50) not null comment '床号',
+   Deleted              int not null comment '是否删除',
+   primary key (Id)
+);
+
+
+
+drop table if exists Device;
+
+/*==============================================================*/
+/* Table: Device                                                */
+/*==============================================================*/
+create table Device
+(
+   Id                   int not null auto_increment,
+   DeviceNo             int not null,
+   DeviceIP             varchar(50) not null,
+   Deleted              int not null,
+   primary key (Id)
+);
+
+
+
+drop table if exists Medicine;
+
+/*==============================================================*/
+/* Table: Medicine                                              */
+/*==============================================================*/
+create table Medicine
+(
+   Id                   int not null auto_increment,
+   MedicineNo           varchar(50) not null,
+   MedicineName         varchar(50) not null,
+   Deleted              int not null,
+   primary key (Id)
+);
+
+
+
+drop table if exists Dispensing;
+
+/*==============================================================*/
+/* Table: Dispensing                                            */
+/*==============================================================*/
+create table Dispensing
+(
+   Id                   int not null auto_increment,
+   PatientId            int not null,
+   MedicineId           int not null,
+   MedicineNumber       decimal(19,2) not null,
+   TakeTime             int not null,
+   IsTake               int not null,
+   Deleted              int not null,
+   primary key (Id)
+);
