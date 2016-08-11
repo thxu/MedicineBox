@@ -121,7 +121,12 @@ namespace MedicineBox
                             default: //命令响应
                                 lock (msgList)
                                 {
-                                    msgList.RemoveAt(msgList.FindIndex(n => n.Flg == recvMsg.Flg));
+                                    int index = msgList.FindIndex(n => n.Flg == recvMsg.Flg);
+                                    if (index > 0)
+                                    {
+                                        msgList.RemoveAt(index);
+                                    }
+
                                 }
                                 break;
                         }
@@ -623,14 +628,30 @@ namespace MedicineBox
                 int currIndex = dgvPatient.CurrentRow.Index;
                 foreach (DataGridViewRow row in dgvPatient.Rows)
                 {
-                    if (row.Index == currIndex && row.Cells[0].Value.ToString() == patientid.ToString())
+                    if (row.Cells[0].Value.ToString() == patientid.ToString())
                     {
-                        dgvPatient_CellClick(dgvPatient, new DataGridViewCellEventArgs(0, row.Index));
-                        break;
+                        if (row.Index == currIndex)
+                        {
+                            dgvPatient_CellClick(dgvPatient, new DataGridViewCellEventArgs(0, row.Index));
+                            break;
+                        }
+                        Patient patient = MedicineLogic.QueryPatientById(patientid);
+                        if ((patient.MorningStatus == TakeStatus.正常 || patient.MorningStatus == TakeStatus.未知) &&
+                            (patient.NoonStatus == TakeStatus.正常 || patient.NoonStatus == TakeStatus.未知) &&
+                            (patient.EveningStatus == TakeStatus.正常 || patient.EveningStatus == TakeStatus.未知) &&
+                            (patient.AdditionalStatus == TakeStatus.正常 || patient.AdditionalStatus == TakeStatus.未知))
+                        {
+                            row.Cells[2].Value = Properties.Resources.greenlight;
+                        }
+                        else
+                        {
+                            row.Cells[2].Value = Properties.Resources.redlight;
+                        }
                     }
+
                 }
             }
-            
+
         }
     }
 }
