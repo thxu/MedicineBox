@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Logic;
 using Model;
 using Model.Enum;
+using Qunau.NetFrameWork.Common.Extension;
 using Qunau.NetFrameWork.Common.Write;
 
 namespace MedicineBox
@@ -553,6 +554,10 @@ namespace MedicineBox
             Patient patient = MedicineLogic.QueryPatientById(id);
             Device device = MedicineLogic.QueryDeviceById(patient.DeviceId);
             Dispensing dispensing = MedicineLogic.QueryFirstDispensingByPatientId(id);
+            if (dispensing == null || dispensing.Id <= 0)
+            {
+                return;
+            }
             byte[] zero = { 0x00 };
             byte[] deviceNo = device.DeviceNo <= 255 ? zero.Concat(Common.IntToHexByte(device.DeviceNo)).ToArray() : Common.IntToHexByte(device.DeviceNo);
             byte[] funcNo = { 0x02 };
