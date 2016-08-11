@@ -122,8 +122,8 @@ namespace MedicineBox
                             default: //命令响应
                                 lock (msgList)
                                 {
-                                    int index = msgList.FindIndex(n => n.Flg == recvMsg.Flg);
-                                    if (index > 0)
+                                    int index = msgList.FindIndex(n => ByteEquals(n.Flg, recvMsg.Flg));
+                                    if (index >= 0)
                                     {
                                         msgList.RemoveAt(index);
                                     }
@@ -138,6 +138,21 @@ namespace MedicineBox
                     LogService.WriteLog(ex, "数据处理异常");
                 }
             }
+        }
+
+        /// <summary>
+        /// 判断两个byte[]是否相等
+        /// </summary>
+        /// <param name="byte1"></param>
+        /// <param name="byte2"></param>
+        /// <returns></returns>
+        private bool ByteEquals(byte[] byte1, byte[] byte2)
+        {
+            if (byte1.Length != byte2.Length)
+            {
+                return false;
+            }
+            return !byte1.Where((t, i) => t != byte2[i]).Any();
         }
 
         /// <summary>
@@ -291,7 +306,7 @@ namespace MedicineBox
             }
             IPAddress IPadr = IPAddress.Parse(ip.Split(':')[0]);         //string to ipaddress
             IPEndPoint endPoint = new IPEndPoint(IPadr, int.Parse(ip.Split(':')[1]));
-            SendData(data, endPoint);
+            //SendData(data, endPoint);
             MsgReTransmission mr = new MsgReTransmission(endPoint, data, flg);
             lock (msgList)
             {
@@ -307,7 +322,7 @@ namespace MedicineBox
         /// <param name="flg"></param>
         private void AutoSendData(EndPoint remote, byte[] data, byte[] flg)
         {
-            SendData(data, remote);
+            //SendData(data, remote);
             MsgReTransmission mr = new MsgReTransmission(remote, data, flg);
             lock (msgList)
             {

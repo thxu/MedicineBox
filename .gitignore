@@ -3,3 +3,12 @@
 ################################################################################
 
 /MedicineBox/Idal/bin/Debug
+/MedicineBox/Idal/obj/Debug
+/MedicineBox/Logic/bin/Debug
+/MedicineBox/Logic/obj/Debug
+/MedicineBox/MedicineBox/bin/Debug
+/MedicineBox/MedicineBox/obj/Debug
+/MedicineBox/Model/obj/Debug
+/MedicineBox/Model/bin/Debug
+/MedicineBox/PatientDal/obj/Debug
+/MedicineBox/PatientDal/bin/Debug
