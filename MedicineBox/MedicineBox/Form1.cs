@@ -650,11 +650,6 @@ namespace MedicineBox
                 {
                     if (row.Cells[0].Value.ToString() == patientid.ToString())
                     {
-                        if (row.Index == currIndex)
-                        {
-                            dgvPatient_CellClick(dgvPatient, new DataGridViewCellEventArgs(0, row.Index));
-                            break;
-                        }
                         Patient patient = MedicineLogic.QueryPatientById(patientid);
                         if ((patient.MorningStatus == TakeStatus.正常 || patient.MorningStatus == TakeStatus.未知) &&
                             (patient.NoonStatus == TakeStatus.正常 || patient.NoonStatus == TakeStatus.未知) &&
@@ -666,6 +661,11 @@ namespace MedicineBox
                         else
                         {
                             row.Cells[2].Value = Properties.Resources.redlight;
+                        }
+                        if (row.Index == currIndex)
+                        {
+                            dgvPatient_CellClick(dgvPatient, new DataGridViewCellEventArgs(0, row.Index));
+                            break;
                         }
                     }
 
